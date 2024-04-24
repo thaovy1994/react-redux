@@ -6,7 +6,7 @@ import MyComponent from './components/MyComponent';
 class App extends React.Component {
   render(){
     return(
-      <div>Hello World
+      <div>Hello Vy Vy
       <MyComponent></MyComponent>
     </div>
     )

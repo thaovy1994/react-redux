@@ -1,16 +1,14 @@
 import React from "react";
+import DisplayInfor from "./DisplayInfor";
+import UserInfor from "./UserInfor";
 
 class MyComponent extends React.Component {
-    state = {
-        name: 'Mina',
-        address: 'DAN',
-        age: 30
-    }
     render(){ //collect all HTML -> UI
         //JSX -> html inside js
         return (
            <div>
-            My name is {this.state.name}, am from {this.state.address}
+                <UserInfor/>
+                <DisplayInfor name='abc' age='23'/>
            </div> 
         );
     }
