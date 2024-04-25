@@ -1,10 +1,10 @@
 import React from "react";
 
-class UserInfor extends React.Component {
+class AddUserInfor extends React.Component {
     state = {
-        name: 'Mina',
+        name: '',
         address: 'DAN',
-        age: 30
+        age: ''
     }
     //Dùng arrow function tại đây để hàm dùng đc biến this
     //handleClick = (event) =>{ ... }
@@ -30,9 +30,20 @@ class UserInfor extends React.Component {
        })
     }
 
+    handleOnChangeAge(event){
+        this.setState({
+             age: event.target.value
+        })
+     }
+
     handleOnSubmit(event){
         //Ngăn reload trang
         event.preventDefault();
+        this.props.handleAddNewUesrs({
+            id: Math.floor((Math.random()*100)+1) + '-random',
+            name: this.state.name,
+            age: this.state.age
+        });
     }
 
     render(){
@@ -42,18 +53,25 @@ class UserInfor extends React.Component {
                 <button onClick={(event) =>{this.handleClick(event)}}>Click me!</button>
                 <button onMouseOver={this.handleOnMouseOver}>Hover me!</button>
                 <form onSubmit={(event)=>{this.handleOnSubmit(event)}}>
-                <label>Your name:</label>
-                <input 
-                value={this.state.name}
-                type="text"
-                onChange={(event)=>{this.handleOnChangeInput(event)}}
-                />
-                <br/>
-                <button>Submit</button>
+                    <label>Your name:</label>
+                    <input 
+                    value={this.state.name}
+                    type="text"
+                    onChange={(event)=>{this.handleOnChangeInput(event)}}
+                    />
+                    <br/>
+                    <label>Your age:</label>
+                    <input 
+                    value={this.state.age}
+                    type="text"
+                    onChange={(event)=>{this.handleOnChangeAge(event)}}
+                    />
+                    <br/>
+                    <button>Submit</button>
                 </form>
             </div>
         )
     }
 }
 
-export default UserInfor;
+export default AddUserInfor;
