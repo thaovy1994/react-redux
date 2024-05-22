@@ -14,7 +14,19 @@ class DisplayInfor extends React.Component {
   };
 
   componentDidMount() {
-    console.log("did mount");
+    setTimeout(() => {
+      document.title = "Did mount";
+    }, 3000);
+  }
+
+  //run when have change: New props/ setState()/ forceUpdate()
+  componentDidUpdate(prevProps, PrevState, snapshot) {
+    console.log(this.props.prevProps);
+    if (this.props.usersList !== prevProps.usersList) {
+      if (this.props.usersList.length == 5) {
+        alert("U got 5 users");
+      }
+    }
   }
 
   handleShowHide = () => {
