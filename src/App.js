@@ -1,19 +1,17 @@
-import React from 'react';
-import './App.scss';
-import MyComponent from './components/MyComponent';
+import React from "react";
+import "./App.scss";
+import MyComponent from "./components/MyComponent";
 
-//class component:
 class App extends React.Component {
-  render(){
-    return(
-      <div>Hello Vy Vy
-      <MyComponent></MyComponent>
-    </div>
-    )
+  render() {
+    return (
+      <div className="app-container">
+        <MyComponent></MyComponent>
+      </div>
+    );
   }
 }
 
-////function component:
 // const App = () => {
 //   const count = useSelector(state => state.counter.count);
 //   const dispatch = useDispatch();
