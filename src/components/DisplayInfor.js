@@ -1,12 +1,24 @@
+import { useState } from "react";
 import "./DisplayInfor.scss";
 
 const DisplayInfor = (props) => {
   const { usersList } = props;
   console.table(usersList);
 
+  const [isShowHideUsersList, setShowHideUsersList] = useState(true);
+
+  const handleShowHideUsersList = () => {
+    setShowHideUsersList(!isShowHideUsersList);
+  };
+
   return (
     <div className="display-infor-container">
-      {true && (
+      <div>
+        <button onClick={handleShowHideUsersList}>
+          {isShowHideUsersList == true ? "Hide" : "Show"}
+        </button>
+      </div>
+      {isShowHideUsersList && (
         <>
           {usersList.map((user) => {
             return (
