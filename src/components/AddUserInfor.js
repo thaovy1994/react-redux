@@ -13,9 +13,6 @@ const AddUserInfor = (props) => {
 
   const handleClick = (event) => {
     setAge(Math.floor(Math.random() * 100 + 1));
-    // this.setState({
-    //   age: Math.floor(Math.random() * 100 + 1),
-    // });
   };
 
   const handleOnChangeName = (event) => {

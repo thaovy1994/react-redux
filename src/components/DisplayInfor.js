@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./DisplayInfor.scss";
 
 const DisplayInfor = (props) => {
@@ -10,6 +10,17 @@ const DisplayInfor = (props) => {
   const handleShowHideUsersList = () => {
     setShowHideUsersList(!isShowHideUsersList);
   };
+
+  //always run after render()
+  useEffect(() => {
+    if (usersList.length === 0) {
+      alert("empty");
+    }
+    // setTimeout(() => {
+    //   document.title = "test useEffect";
+    // }, 3000);
+    // }, []); //add [] to useEffect only run 1 time
+  }, [usersList]); //[usersList] để theo dõi usersList
 
   return (
     <div className="display-infor-container">
