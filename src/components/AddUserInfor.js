@@ -1,69 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 
-class AddUserInfor extends React.Component {
-  state = {
-    name: "",
-    address: "DAN",
-    age: "",
+// class AddUserInfor extends React.Component {
+const AddUserInfor = (props) => {
+  // state = {
+  //   name: "",
+  //   address: "DAN",
+  //   age: "",
+  // };
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("DAN");
+  const [age, setAge] = useState("");
+
+  const handleClick = (event) => {
+    setAge(Math.floor(Math.random() * 100 + 1));
+    // this.setState({
+    //   age: Math.floor(Math.random() * 100 + 1),
+    // });
   };
-  //Dùng arrow function tại đây để hàm dùng đc biến this
-  //or dùng arrow function ở hàm dc ánh xạ ở nút button
-  handleClick = (event) => {
-    this.setState({
-      age: Math.floor(Math.random() * 100 + 1),
-    });
+
+  const handleOnChangeName = (event) => {
+    setName(event.target.value);
   };
 
-  handleOnChangeName(event) {
-    this.setState({
-      name: event.target.value,
-    });
-  }
+  const handleOnChangeAge = (event) => {
+    setAge(event.target.value);
+  };
 
-  handleOnChangeAge(event) {
-    this.setState({
-      age: event.target.value,
-    });
-  }
-
-  handleOnSubmit = (event) => {
-    //Ngăn reload trang
+  const handleOnSubmit = (event) => {
     event.preventDefault();
-    this.props.handleAddNewUesrs({
+    props.handleAddNewUesrs({
       id: Math.floor(Math.random() * 100 + 1) + "-random",
-      name: this.state.name,
-      age: this.state.age,
+      name: name,
+      age: age,
     });
   };
 
-  render() {
-    return (
-      <div>
-        <button onClick={this.handleClick}>Click me!</button>
-        <form onSubmit={this.handleOnSubmit}>
-          <label>Your name:</label>
-          <input
-            value={this.state.name}
-            type="text"
-            onChange={(event) => {
-              this.handleOnChangeName(event);
-            }}
-          />
-          <br />
-          <label>Your age:</label>
-          <input
-            value={this.state.age}
-            type="text"
-            onChange={(event) => {
-              this.handleOnChangeAge(event);
-            }}
-          />
-          <br />
-          <button>Submit</button>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <button onClick={handleClick}>Click me!</button>
+      <form onSubmit={handleOnSubmit}>
+        <label>Your name:</label>
+        <input
+          value={name}
+          type="text"
+          onChange={(event) => {
+            handleOnChangeName(event);
+          }}
+        />
+        <br />
+        <label>Your age:</label>
+        <input
+          value={age}
+          type="text"
+          onChange={(event) => {
+            handleOnChangeAge(event);
+          }}
+        />
+        <br />
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+};
 
 export default AddUserInfor;
