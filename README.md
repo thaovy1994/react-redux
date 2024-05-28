@@ -3,3 +3,4 @@
 - Run `npm install`
 - Run `npm npm install react-bootstrap bootstrap`
 - Run `npm i react-router-dom`
+- Run `npm install react-pro-sidebar`

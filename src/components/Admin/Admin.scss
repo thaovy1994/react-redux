@@ -1,0 +1,10 @@
+.admin-container {
+  display: flex; //className con sẽ xếp theo hàng ngang
+  .admin-sidebar {
+    .ps-sidebar-container {
+      height: 100vh !important;
+    }
+  }
+  .admin-content {
+  }
+}
