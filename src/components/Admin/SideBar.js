@@ -1,10 +1,10 @@
-import {
-  FaGem,
-  FaGithub,
-  FaRegLaughWink,
-  FaTachometerAlt,
-} from "react-icons/fa";
+import { CiLight } from "react-icons/ci";
+import { DiReact } from "react-icons/di";
+import { FaGem, FaGithub, FaRegLaughWink } from "react-icons/fa";
+import { FaCartShopping } from "react-icons/fa6";
 import { FcBarChart } from "react-icons/fc";
+import { MdDashboard } from "react-icons/md";
+import { RiGlobalFill } from "react-icons/ri";
 import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
 import sidebarBg from "../../assets/bg2.jpg";
 import "./SideBar.scss";
@@ -21,20 +21,8 @@ const SideBar = (props) => {
         onToggle={handleToggleSidebar}
       >
         <div className="sidebar-header">
-          <div
-            style={{
-              padding: "24px",
-              textTransform: "uppercase",
-              fontWeight: "bold",
-              fontSize: 14,
-              letterSpacing: "1px",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-            }}
-          >
-            My app
-          </div>
+          <DiReact size={"2cm"} color={"rgb(0, 255, 208)"} />
+          <span>My app</span>
         </div>
 
         <div className="sidebar-content">
@@ -48,49 +36,53 @@ const SideBar = (props) => {
               <MenuItem> Line charts</MenuItem>
               <MenuItem> Bar charts</MenuItem>
             </SubMenu>
-            <SubMenu label="Maps">
+            <SubMenu icon={<RiGlobalFill color={"00bfff"} />} label="Maps">
               <MenuItem> Google maps</MenuItem>
               <MenuItem> Open street maps</MenuItem>
             </SubMenu>
-            <SubMenu label="Theme">
-              <MenuItem> Dark</MenuItem>
-              <MenuItem> Light</MenuItem>
+            <SubMenu
+              icon={<CiLight size={"0.8cm"} color={"00bfff"} />}
+              label="Theme"
+            >
+              <MenuItem className="menu-button"> Dark</MenuItem>
+              <MenuItem className="menu-button"> Light</MenuItem>
             </SubMenu>
-            <SubMenu label="Components">
-              <MenuItem> Grid</MenuItem>
-              <MenuItem> Layout</MenuItem>
+            <SubMenu icon={<FaGem color={"00bfff"} />} label="Components">
+              <MenuItem className="menu-button"> Grid</MenuItem>
+              <MenuItem className="menu-button"> Layout</MenuItem>
               <SubMenu label="Forms">
-                <MenuItem> Input</MenuItem>
-                <MenuItem> Select</MenuItem>
+                <MenuItem className="menu-button"> Input</MenuItem>
+                <MenuItem className="menu-button"> Select</MenuItem>
                 <SubMenu label="More">
-                  <MenuItem> CheckBox</MenuItem>
-                  <MenuItem> Radio</MenuItem>
+                  <MenuItem className="menu-button"> CheckBox</MenuItem>
+                  <MenuItem className="menu-button"> Radio</MenuItem>
                 </SubMenu>
               </SubMenu>
             </SubMenu>
-            <SubMenu label="E-commerce">
-              <MenuItem> Product</MenuItem>
-              <MenuItem> Orders</MenuItem>
-              <MenuItem> Credit card</MenuItem>
+            <SubMenu icon={<FaCartShopping />} label="E-commerce">
+              <MenuItem className="menu-button"> Product</MenuItem>
+              <MenuItem className="menu-button"> Orders</MenuItem>
+              <MenuItem className="menu-button"> Credit card</MenuItem>
             </SubMenu>
           </Menu>
           <Menu iconShape="circle">
             <MenuItem
-              icon={<FaTachometerAlt />}
+              icon={<MdDashboard />}
               suffix={<span className="badge red">New</span>}
             >
               dashboard
             </MenuItem>
-            <MenuItem icon={<FaGem />}> components </MenuItem>
+            <MenuItem icon={<FaGem />}>components</MenuItem>
           </Menu>
           <Menu iconShape="circle">
             <SubMenu
               suffix={<span className="badge yellow">3</span>}
               icon={<FaRegLaughWink />}
+              label="Features"
             >
-              <MenuItem> 1</MenuItem>
-              <MenuItem> 2</MenuItem>
-              <MenuItem> 3</MenuItem>
+              <MenuItem className="menu-button">User Management</MenuItem>
+              <MenuItem className="menu-button">Quiz Test Management</MenuItem>
+              <MenuItem className="menu-button">Question Management</MenuItem>
             </SubMenu>
           </Menu>
         </div>
@@ -103,7 +95,7 @@ const SideBar = (props) => {
             }}
           >
             <a
-              href="https://github.com/azouaoui-med/react-pro-sidebar"
+              href="https://github.com/thaovy1994/react-redux"
               target="_blank"
               className="sidebar-btn"
               rel="noopener noreferrer"
@@ -113,7 +105,6 @@ const SideBar = (props) => {
                 style={{
                   whiteSpace: "nowrap",
                   textOverflow: "ellipsis",
-                  overflow: "hidden",
                 }}
               >
                 viewSource
