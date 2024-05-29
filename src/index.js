@@ -5,6 +5,8 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import Admin from "./components/Admin/Admin";
+import DashBoard from "./components/Admin/Content/DashBoard";
+import ManageUser from "./components/Admin/Content/ManageUser";
 import HomePage from "./components/Home/HomePage";
 import User from "./components/User/User";
 import store from "./redux/store";
@@ -22,7 +24,11 @@ root.render(
           <Route index element={<HomePage />} />
           <Route path="/users" element={<User />} />
         </Route>
-        <Route path="/admin" element={<Admin />} />
+
+        <Route path="/admin" element={<Admin />}>
+          <Route index element={<DashBoard />} />
+          <Route path="manage-users" element={<ManageUser />} />
+        </Route>
       </Routes>
     </BrowserRouter>
     {/* </React.StrictMode> */}

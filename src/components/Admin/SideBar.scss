@@ -17,6 +17,10 @@
   }
   .menu-button {
     color: black;
+    background-color: rgba(24, 21, 21, 0.208);
+  }
+  &:hover {
+    color: #06062889;
   }
 }
 
@@ -31,6 +35,9 @@
   margin-left: 30px;
   border-radius: 8px;
   color: white;
+  bottom: 20px;
+  position: absolute;
+  z-index: 1000;
   background: linear-gradient(45deg, rgb(21 87 205) 0%, rgb(90 225 255) 100%);
   .sidebar-btn-wrapper {
     display: flex;
@@ -56,7 +63,7 @@
         font-size: 13px;
       }
       &:hover {
-        color: #dee2ec;
+        color: #000001;
       }
     }
   }

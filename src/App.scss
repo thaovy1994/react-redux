@@ -70,6 +70,14 @@ body {
         button {
           border-radius: 5px;
           height: 40px;
+          padding: 0 15px;
+          background-color: #303030;
+          color: white;
+          border: none;
+
+          &:hover {
+            background: black;
+          }
         }
       }
     }
