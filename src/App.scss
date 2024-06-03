@@ -52,32 +52,60 @@ body {
     }
   }
   .homepage-container {
-    .homepage-content {
-      padding: 100px;
-      width: 50%;
+    .homepage-1 {
+      width: 100%;
+      height: 100vh;
       position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      .title-1 {
-        font-size: 50px;
-        font-weight: 600;
-      }
-      .title-2 {
-        font-size: 30px;
-      }
-      .title-3 {
-        button {
-          border-radius: 5px;
-          height: 40px;
-          padding: 0 15px;
-          background-color: #303030;
-          color: white;
-          border: none;
+      .homepage-content {
+        padding: 100px;
+        width: 50%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .title-1 {
+          font-size: 50px;
+          font-weight: 600;
+        }
+        .title-2 {
+          font-size: 30px;
+        }
+        .title-3 {
+          button {
+            border-radius: 5px;
+            height: 40px;
+            padding: 0 15px;
+            background-color: #303030;
+            color: white;
+            border: none;
 
-          &:hover {
-            background: black;
+            &:hover {
+              background: black;
+            }
           }
+        }
+      }
+    }
+    .homepage-2 {
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(99, 117, 223, 0.899);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .form-control {
+        position: relative;
+        width: 25%;
+        text-align: center;
+        height: 30vh;
+        border-radius: 10px;
+        button {
+          width: 60%;
+          border-radius: 20px;
+          margin-right: 15px;
+          padding: 0 15px;
+          height: 40px;
+          border: 1px solid #535353;
         }
       }
     }
@@ -85,9 +113,12 @@ body {
 }
 
 video {
-  position: fixed;
-  // bottom: 0;
+  // position: fixed;
+  position: absolute;
   right: 0;
   width: 50vw;
   height: auto;
+  top: 0;
+  right: 0;
+  object-fit: cover; /* Ensures the video covers the whole area */
 }
