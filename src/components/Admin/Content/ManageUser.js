@@ -3,14 +3,17 @@ import { FcPlus } from "react-icons/fc";
 import { getAllUser } from "../../../services/apiServices";
 import "./ManageUser.scss";
 import ModalCreateUser from "./ModalCreateUser";
+import ModalDeleteUser from "./ModalDeleteUser";
 import ModalUpdateUser from "./ModalUpdateUser";
 import TableUser from "./TableUser";
 
 const ManageUser = (props) => {
   const [showModalAddUser, setShowModalAddUser] = useState(false);
   const [showModalUpdateUser, setShowModalUpdateUser] = useState(false);
+  const [showModalDeleteUser, setShowModalDeleteUser] = useState(false);
   const [usersList, setUsersList] = useState([]);
   const [dataUpdate, setDataUpdate] = useState({});
+  const [dataDelete, setDataDelete] = useState({});
 
   useEffect(() => {
     fetchUserList();
@@ -26,6 +29,11 @@ const ManageUser = (props) => {
   const handleClickBtnUpdate = (user) => {
     setShowModalUpdateUser(true);
     setDataUpdate(user);
+  };
+
+  const handleClickBtnDelete = (user) => {
+    setShowModalDeleteUser(true);
+    setDataDelete(user);
   };
 
   // case: no change data.
@@ -48,6 +56,7 @@ const ManageUser = (props) => {
           <TableUser
             usersList={usersList}
             handleClickBtnUpdate={handleClickBtnUpdate}
+            handleClickBtnDelete={handleClickBtnDelete}
           />
         </div>
         <ModalCreateUser
@@ -61,6 +70,12 @@ const ManageUser = (props) => {
           dataUpdate={dataUpdate}
           fetchUserList={fetchUserList}
           resetUpdateData={resetUpdateData}
+        />
+        <ModalDeleteUser
+          show={showModalDeleteUser}
+          setShow={setShowModalDeleteUser}
+          fetchUserList={fetchUserList}
+          dataDelete={dataDelete}
         />
       </div>
     </div>
