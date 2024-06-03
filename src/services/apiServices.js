@@ -24,9 +24,18 @@ const putUpdateUser = (id, username, role, image) => {
   return axios.put("api/v1/participant", data);
 };
 
-//passed an id to server side
 const deleteUser = (userId) => {
   return axios.delete("api/v1/participant", { data: { id: userId } });
 };
 
-export { postCreateNewUser, getAllUser, putUpdateUser, deleteUser };
+const getUserListPaginate = (page, limit) => {
+  return axios.get(`api/v1/participant?page=${page}&limit=${limit}`);
+};
+
+export {
+  postCreateNewUser,
+  getAllUser,
+  putUpdateUser,
+  deleteUser,
+  getUserListPaginate,
+};
