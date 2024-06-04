@@ -7,6 +7,7 @@ import App from "./App";
 import Admin from "./components/Admin/Admin";
 import DashBoard from "./components/Admin/Content/DashBoard";
 import ManageUser from "./components/Admin/Content/ManageUser";
+import Login from "./components/Auth/Login";
 import HomePage from "./components/Home/HomePage";
 import User from "./components/User/User";
 import store from "./redux/store";
@@ -29,6 +30,8 @@ root.render(
           <Route index element={<DashBoard />} />
           <Route path="manage-users" element={<ManageUser />} />
         </Route>
+
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
     {/* </React.StrictMode> */}

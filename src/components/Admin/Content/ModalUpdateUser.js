@@ -50,14 +50,14 @@ const ModalUpdateUser = (props) => {
     }
   };
 
-  const handleSubmitCreateUser = async () => {
+  const handleSubmitUpdateUser = async () => {
     //call api & submit data:
     let res = await putUpdateUser(dataUpdate.id, username, role, image);
     console.log(">>> check res", res);
     if (res.data && res.data.EC === 0) {
       toast.success(res.data.EM);
       handleClose();
-      await props.fetchUserList();
+      await props.fetchUserListPaginate(props.currentPage);
     }
     if (res.data && res.data.EC !== 0) {
       toast.error(res.data.EM);
@@ -143,7 +143,7 @@ const ModalUpdateUser = (props) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => handleSubmitCreateUser()}>
+          <Button variant="primary" onClick={() => handleSubmitUpdateUser()}>
             Save Changes
           </Button>
         </Modal.Footer>

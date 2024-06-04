@@ -20,40 +20,43 @@ const HomePage = (props) => {
         </div>
       </div>
       <div className="homepage-2">
-        <div class="form-control signin-form">
+        <div className="form-control signin-form">
           <form action="#">
             <button className="btn btn-light mt-3">
               Log in with Recruit ID
             </button>
-            <button className="btn btn-dark mt-3">
+            <button className="btn btn-dark mt-3 mb-3">
               New memeber registration
             </button>
           </form>
           <span>or signin with</span>
-          <div class="socials">
+          <div className="socials">
             <FaFacebook
-              className="mx-1"
+              className="mx-1 mt-1 mb-1"
               size={"30px"}
               color={"rgb(8, 4, 236, 0.949)"}
             />
             <FaGooglePlus
-              className="mx-1"
+              className="mx-1 mt-1 mb-1"
               size={"30px"}
               color={"rgb(225, 52, 52, 0.862)"}
             />
-            <FaLinkedin size={"30px"} color={"rgb(87, 79, 227, 0.949)"} />
+            <FaLinkedin
+              className="mt-1 mb-1"
+              size={"30px"}
+              color={"rgb(87, 79, 227, 0.949)"}
+            />
           </div>
           <div>
-            <h6>
+            <div className="link-registered-hiring">
               <a href="link-for-registered-members">
                 Click here if you registered as a member before the renewal
               </a>
-            </h6>
-            <h6>
+              <br />
               <a href="link-for-hiring-company">
                 Click here if you are in charge of the hiring company
               </a>
-            </h6>
+            </div>
           </div>
         </div>
       </div>
