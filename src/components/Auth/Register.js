@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { postLogin } from "../../services/apiServices";
-import "./Login.scss";
+import { postRegister } from "../../services/apiServices";
+import "./Register.scss";
 
-const Login = () => {
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [isShowPassword, setIsShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     const validateEmail = (email) => {
       return String(email)
         .toLowerCase()
@@ -28,7 +31,7 @@ const Login = () => {
       return;
     }
 
-    let res = await postLogin(email, password);
+    let res = await postRegister(email, password, username);
     if (res.data && res.data.EC === 0) {
       toast.success(res.data.EM);
       navigate("/");
@@ -38,21 +41,23 @@ const Login = () => {
     }
   };
   return (
-    <div className="login-container">
-      <div className="login-header">
+    <div className="register-container">
+      <div className="register-header">
         <span>Don't have an account yet?</span>
         <button
           onClick={() => {
-            navigate("/register");
+            navigate("/login");
           }}
         >
-          Sign up
+          register
         </button>
         <span>Need help?</span>
       </div>
-      <div className="login-title col-3 mx-auto">Login | Sign up</div>
-      <div className="login-welcome col-3 mx-auto">Hello, who's this ?</div>
-      <div className="login-content-form col-3 mx-auto">
+      <div className="register-title col-3 mx-auto">Sign up</div>
+      <div className="register-welcome col-3 mx-auto">
+        Hello, Start your journey!
+      </div>
+      <div className="register-content-form col-3 mx-auto">
         <div className="form-group">
           <label>Email</label>
           <input
@@ -62,19 +67,36 @@ const Login = () => {
             onChange={(event) => setEmail(event.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label>Password</label>
+        <div className="form-group pass-group">
+          <label>Password (*)</label>
           <input
-            type="password"
+            type={isShowPassword ? "text" : "password"}
             className="form-control"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
+          {isShowPassword ? (
+            <span className="eye-icon" onClick={() => setIsShowPassword(false)}>
+              <VscEye />
+            </span>
+          ) : (
+            <span className="eye-icon" onClick={() => setIsShowPassword(true)}>
+              <VscEyeClosed />
+            </span>
+          )}
         </div>
-        <span className="forgot-password">Forgot password?</span>
+        <div className="form-group">
+          <label>Username</label>
+          <input
+            type="password"
+            className="form-control"
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
+          />
+        </div>
         <div>
-          <button className="btn-submit" onClick={() => handleLogin()}>
-            Login
+          <button className="btn-submit" onClick={() => handleRegister()}>
+            Create free account
           </button>
         </div>
         <div className="text-center">
@@ -93,4 +115,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
