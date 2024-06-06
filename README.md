@@ -9,3 +9,6 @@
 - Run `npm install react-paginate --save` to render a pagination
 - Run `npm start` causes Create React App to display a URL of port 3000
 - Run `npm i --save lodash`easy to work with arrays, numbers, objects, strings, etc.
+
+- Run `npm install redux react-redux`
+- Run `npm install @reduxjs/toolkit` use Redux Toolkit (with typeScripts)
