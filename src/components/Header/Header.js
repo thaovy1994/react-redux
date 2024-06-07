@@ -49,7 +49,7 @@ const Header = () => {
               Log in
             </button>
             <button className="btn-signup" onClick={() => handleRegister()}>
-              Sign in
+              Sign up
             </button>
           </Nav>
         </Navbar.Collapse>

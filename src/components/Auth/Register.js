@@ -43,13 +43,13 @@ const Register = () => {
   return (
     <div className="register-container">
       <div className="register-header">
-        <span>Don't have an account yet?</span>
+        <span>Do you have an account?</span>
         <button
           onClick={() => {
             navigate("/login");
           }}
         >
-          register
+          Login
         </button>
         <span>Need help?</span>
       </div>

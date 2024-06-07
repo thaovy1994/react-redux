@@ -1,5 +1,5 @@
 const DashBoard = (props) => {
-  return <div>Dashboard</div>;
+  return <div className="title">Welcome to Dashboard</div>;
 };
 
 export default DashBoard;

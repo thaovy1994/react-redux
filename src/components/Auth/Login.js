@@ -50,7 +50,7 @@ const Login = () => {
         </button>
         <span>Need help?</span>
       </div>
-      <div className="login-title col-3 mx-auto">Login | Sign up</div>
+      <div className="login-title col-3 mx-auto">Login</div>
       <div className="login-welcome col-3 mx-auto">Hello, who's this ?</div>
       <div className="login-content-form col-3 mx-auto">
         <div className="form-group">
