@@ -1,7 +1,10 @@
 import { FaFacebook, FaGooglePlus, FaLinkedin } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import videoHomepage from "../../assets/video-homepage.mp4";
 
 const HomePage = (props) => {
+  const navigate = useNavigate();
+
   return (
     <div className="homepage-container">
       <div className="homepage-1">
@@ -22,7 +25,12 @@ const HomePage = (props) => {
       <div className="homepage-2">
         <div className="form-control signin-form">
           <form action="#">
-            <button className="btn btn-light mt-3">
+            <button
+              className="btn btn-light mt-3"
+              onClick={() => {
+                navigate("/register");
+              }}
+            >
               Log in with Recruit ID
             </button>
             <button className="btn btn-dark mt-3 mb-3">

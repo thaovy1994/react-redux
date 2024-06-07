@@ -21,6 +21,7 @@ body {
 
 .app-container {
   .header-container {
+    padding: 0 80px;
     .btn-login {
       border-radius: 5px;
       margin-right: 15px;
@@ -87,6 +88,15 @@ body {
           }
         }
       }
+      video {
+        position: absolute;
+        right: 0;
+        max-width: 50%;
+        max-height: 100%;
+        // top: 40px;
+        right: 0;
+        // object-fit: cover; /* Ensures the video covers the whole area */
+      }
     }
     .homepage-2 {
       width: 100%;
@@ -110,8 +120,8 @@ body {
           padding: 0 15px;
           height: 40px;
           border: 1px solid #535353;
-          white-space: nowrap; /* Prevents text from wrapping */
-          overflow: hidden; /* Prevents overflow */
+          white-space: nowrap;
+          overflow: hidden;
         }
         .link-registered-hiring {
           font-size: small;
@@ -119,14 +129,4 @@ body {
       }
     }
   }
-}
-
-video {
-  position: absolute;
-  right: 0;
-  width: 50vw;
-  height: auto;
-  top: 40px;
-  right: 0;
-  object-fit: cover; /* Ensures the video covers the whole area */
 }

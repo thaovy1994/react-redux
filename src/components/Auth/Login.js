@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { doLogin } from "../../redux/action/userAction";
 import { postLogin } from "../../services/apiServices";
 import "./Login.scss";
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //can't use with Redux
+  const dispatch = useDispatch();
 
   const handleLogin = async () => {
     const validateEmail = (email) => {
@@ -30,6 +33,8 @@ const Login = () => {
 
     let res = await postLogin(email, password);
     if (res.data && res.data.EC === 0) {
+      //dispatch -> action
+      dispatch(doLogin(res.data));
       toast.success(res.data.EM);
       navigate("/");
     }
@@ -65,7 +70,7 @@ const Login = () => {
         <div className="form-group">
           <label>Password</label>
           <input
-            type="password"
+            type={"password"}
             className="form-control"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
