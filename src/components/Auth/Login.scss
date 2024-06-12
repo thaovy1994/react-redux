@@ -44,10 +44,27 @@
       margin: 10px 0;
       color: white;
       background-color: black;
-      &:hover {
+      &:disabled {
         background-color: #2a2929e4;
+        color: #afafaf;
+        cursor: no-drop;
       }
     }
+    .loading-icon {
+      margin-right: 5px;
+      margin-bottom: 3px;
+      color: #00d4ff;
+      animation: spin 1s infinite linear;
+    }
+    @keyframes spin {
+      from {
+        transform: scale(1) rotate(0deg);
+      }
+      to {
+        transform: scale(1) rotate(360deg);
+      }
+    }
+
     .back-homepage {
       cursor: pointer;
     }
