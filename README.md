@@ -17,3 +17,4 @@
 - Run `npm install redux react-redux`
 - Run `npm install @reduxjs/toolkit` use Redux Toolkit (with typeScripts)
 - Run `npm install --save nprogress` Slim progress bars for Ajax'y applications
+- Run `npm install redux-persist` persist/ write Redux state to browser’s local storage & after closing or refreshing page, data remains available.
