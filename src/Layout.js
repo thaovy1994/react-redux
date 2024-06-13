@@ -8,7 +8,7 @@ import ManageUser from "./components/Admin/Content/ManageUser";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import HomePage from "./components/Home/HomePage";
-import User from "./components/User/User";
+import QuizList from "./components/User/quizList";
 
 const Layout = (props) => {
   return (
@@ -16,7 +16,7 @@ const Layout = (props) => {
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
-          <Route path="/users" element={<User />} />
+          <Route path="/users" element={<QuizList />} />
         </Route>
 
         <Route path="/admin" element={<Admin />}>
