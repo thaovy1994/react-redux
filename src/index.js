@@ -12,6 +12,7 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //StrictMode (render twice) just run at local/development, not product
+  //PersistGate ensure that the application is run only if when the data in redux is loaded successfully
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       {/* <React.StrictMode> */}
