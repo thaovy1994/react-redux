@@ -8,7 +8,7 @@ import ManageUser from "./components/Admin/Content/ManageUser";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import HomePage from "./components/Home/HomePage";
-import QuizList from "./components/User/quizList";
+import QuizList from "./components/User/QuizList";
 
 const Layout = (props) => {
   return (

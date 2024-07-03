@@ -1,7 +1,6 @@
 import axios from "../utils/axiosCustomize";
 
 const postCreateNewUser = (email, password, username, role, image) => {
-  //call api & submit data:
   const data = new FormData();
   data.append("email", email);
   data.append("password", password);
@@ -32,20 +31,17 @@ const getUserListPaginate = (page, limit) => {
   return axios.get(`api/v1/participant?page=${page}&limit=${limit}`);
 };
 
-const postLogin = (userEmail, userPassword) => {
-  return axios.post(`api/v1/login`, {
-    email: userEmail,
-    password: userPassword,
-    delay: 3000,
-  });
-};
+const getQuizByUser = () => {
+  // const res = axios
+  //   .get(`api/v1/quiz-by-participant`)
+  //   .then((response) => response)
+  //   .catch((error) => error);
+  const res = axios
+    .get(`https://jsonplaceholder.typicode.com/todos/1`)
+    .then((response) => response)
+    .catch((error) => error);
 
-const postRegister = (userEmail, userPassword, username) => {
-  return axios.post(`api/v1/register`, {
-    email: userEmail,
-    password: userPassword,
-    username: username,
-  });
+  return res.data;
 };
 
 export {
@@ -54,6 +50,5 @@ export {
   putUpdateUser,
   deleteUser,
   getUserListPaginate,
-  postLogin,
-  postRegister,
+  getQuizByUser,
 };

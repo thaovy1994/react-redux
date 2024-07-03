@@ -2,7 +2,7 @@ import { useState } from "react";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { postRegister } from "../../services/apiServices";
+import { postRegister } from "../../services/loginRegisterService";
 import "./Register.scss";
 
 const Register = () => {

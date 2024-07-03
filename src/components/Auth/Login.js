@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { doLogin } from "../../redux/action/userAction";
-import { postLogin } from "../../services/apiServices";
+import { postLogin } from "../../services/loginRegisterService";
 import "./Login.scss";
 
 const Login = (props) => {
